@@ -1,3 +1,7 @@
 #!/usr/bin/env python3
-def islower(c):  # verifie si caractere dans la plage minuscule
-    return ord('a') <= ord(c) <= ord('z')
+def islower(c):
+    conversion = ord(c):
+        if conversion in range(97, 123):
+            return True
+        else:
+            return False
