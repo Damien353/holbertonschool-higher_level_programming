@@ -2,7 +2,7 @@
 import sys
 if __name__ == "__main__":
     arguments = len(sys.argv)
-    arguments_count = arguments - 1
+    arguments_count = arguments - 1  # argu passes sans compter nom script
     if arguments_count == 0:
         print("0 arguments.")
     elif arguments_count == 1:
