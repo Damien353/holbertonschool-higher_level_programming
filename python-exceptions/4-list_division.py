@@ -12,6 +12,7 @@ def list_division(my_list_1, my_list_2, list_length):
                 raise TypeError
 
             result.append(my_list_1[i] / my_list_2[i])
+            division_result = my_list_1[i] / my_list_2[i]
 
         except ZeroDivisionError:
             print("division by 0")
@@ -22,5 +23,8 @@ def list_division(my_list_1, my_list_2, list_length):
         except IndexError:
             print("out of range")
             result.append(0)
-
+        finally:
+            if 'division_result' not in locals():
+                division_result = 0
+            result.append(division_result)
     return result
