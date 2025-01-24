@@ -7,7 +7,7 @@ that adds two integers
 
 def add_integer(a, b=98):
     """
-    Adds two integers, a and b. If a or b are floats, they are first 
+    Adds two integers, a and b. If a or b are floats, they are first
     cast to integers.
 
     Parameters:
