@@ -1,0 +1,30 @@
+>>> from importlib import import_module
+>>> text_indentation = import_module('5-text_indentation').text_indentation
+>>> text_indentation("bonjour, je fais des tests")
+bonjour, je fais des tests
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_indentation(45)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation(45)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation(('oui', 'non','ok'))
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation('bonjour', 'aurevoir')
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+>>> text_indentation('bonjour:')
+bonjour:
+>>> text_indentation(' ca va ?')
+ca va ?
+>>> text_indentation('ca va, bien ')
+ca va, bien
