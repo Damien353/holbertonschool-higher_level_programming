@@ -5,11 +5,11 @@ class Square:
     A class that defines a square by its size and provides methods
     to calculate its area and print its representation.
     """
-    
+
     def __init__(self, size=0):
         """
         Initializes a new square instance.
-        
+
         Parameters:
         size (int): The size of the square. Defaults to 0.
         """
@@ -19,7 +19,7 @@ class Square:
     def size(self):
         """
         Retrieves the current size of the square.
-        
+
         Returns:
         int: The size of the square.
         """
@@ -29,10 +29,10 @@ class Square:
     def size(self, value):
         """
         Sets the size of the square.
-        
+
         Parameters:
         value (int): The size of the square.
-        
+
         Raises:
         TypeError: If the value is not an integer.
         ValueError: If the value is less than 0.
@@ -46,7 +46,7 @@ class Square:
     def area(self):
         """
         Calculates the area of the square.
-        
+
         Returns:
         int: The area of the square.
         """
@@ -58,7 +58,7 @@ class Square:
         prints an empty line.
         """
         if self.size == 0:
-            print("")  # Line vide si la taille est 0
+            print("")
         else:
             for _ in range(self.size):
-                print("#" * self.size)  # Affichage du carre
+                print("#" * self.size)
