@@ -103,15 +103,11 @@ class Rectangle:
             str: A string with the rectangle drawn using `#`. If width
             or height is 0, return an empty string.
         """
+        rectangle_str = ""
         if self.__width == 0 or self.__height == 0:
-            return ""
-        return "\n".join(["#" * self.__width] * self.__height)
-
-    def __repr__(self):
-        """
-        Return a string representation for debugging purposes.
-        
-        Returns:
-            str: A string that can be used to recreate the rectangle object.
-        """
-        return f"Rectangle({self.__width}, {self.__height})"
+            return rectangle_str
+        for i in range(self.__height):
+            rectangle_str += ("#" * self.__width)
+            if i is not self.__height - 1:
+                rectangle_str += "\n"
+        return rectangle_str
