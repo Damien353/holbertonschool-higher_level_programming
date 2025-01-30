@@ -1,5 +1,13 @@
 #!/usr/bin/python3
+"""
+Module: Square This module defines a Square class that represents a geometric
+square. It allows manipulating square objects with a specified size. It offers
+a property to access and modify the size, with validity checks. It also
+provides methods to calculate the area of the square and display
+a square made of #.
 
+Class: Square: Represents a square with a size defined by an integer.
+"""
 class Square:
     """
     A class that defines a square by its size and provides methods
