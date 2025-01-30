@@ -1,4 +1,26 @@
 #!/usr/bin/python3
+"""
+Module: Square
+
+This module defines a `Square` class that represents a square with
+a defined size and position.
+It allows you to create square objects, set and get their size and position
+calculate their area, and print them in a specific format.
+
+Classes:
+    Square: A class to represent a square with a specified size and position.
+
+Methods:
+    __init__(size=0, position=(0, 0)): Initializes a new square with
+    an optional size and position.
+    size: Property to get and set the size of the square, with validation
+    for non-negative integers. position: Property to get and set the position
+    of the square, which must be a tuple of two non-negative integers.
+    area(): Calculates and returns the area of the square.
+    my_print(): Prints the square using `#` characters, with optional
+    spacing based on the position.
+"""
+
 
 class Square:
     """
