@@ -13,7 +13,7 @@ class Square:
         Parameters:
         size (int): The size of the square. Defaults to 0.
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -50,15 +50,14 @@ class Square:
         Returns:
         int: The area of the square.
         """
-        return self.size ** 2
+        return self.__size * self.__size
 
     def my_print(self):
         """
         Prints the square with the character '#'. If the size is 0,
         prints an empty line.
         """
-        if self.size == 0:
-            print("")
+        if self.__size == 0:
+            print()
         else:
-            for _ in range(self.size):
-                print("#" * self.size)
+            print('\n'.join([''.join('#' * self.__size)] * self.__size))
