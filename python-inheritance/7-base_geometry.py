@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """
-
+Module qui contient la classe BaseGeometry.
+Cette classe fournit des operations geometriques de base, telles que la
+validation d'entiers et la gestion des erreurs liees au calcul d'aires.
+Elle est destinee a etre etendue par d'autres classes qui implementent
+des formes geometriques plus specifiquees.
 """
 
 
