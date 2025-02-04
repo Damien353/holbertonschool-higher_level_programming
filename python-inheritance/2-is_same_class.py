@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module contenant une fonction qui renvoie True si l'objet est exactement une 
+Module contenant une fonction qui renvoie True si l'objet est exactement une
 instance de la classe specifiee, sinon False.
 """
 
