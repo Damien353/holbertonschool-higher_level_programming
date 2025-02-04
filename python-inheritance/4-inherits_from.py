@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module contenant une fonction qui renvoie True si l'objet est une 
+Module contenant une fonction qui renvoie True si l'objet est une
 instance d'une classe qui herite (directement ou indirectement) de la
 classe specifiee sinon False.
 """

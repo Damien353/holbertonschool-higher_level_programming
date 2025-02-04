@@ -8,7 +8,7 @@ sinon False.
 
 def is_kind_of_class(obj, a_class):
     """
-    Retourne True si l'objet est une instance de a_class ou si l'objet est une 
+    Retourne True si l'objet est une instance de a_class ou si l'objet est une
     instance d'une classe qui herite de a_class.
     Parameters:
         obj: L'objet que l'on souhaite tester.
