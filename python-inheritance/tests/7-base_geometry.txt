@@ -102,3 +102,45 @@ ValueError: width must be greater than 0
 >>> bg.integer_validator("width   width", 10)
 
 >>> bg.integer_validator("width_@#_name", 10)
+
+>>> bg.integer_validator("width", 9223372036854775807)
+
+>>> bg.integer_validator("width", -9223372036854775807)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+>>> bg.integer_validator("width", 99999999999.99)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", [1, 2, 3])
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", {"key": "value"})
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", {1, 2, 3})
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
+>>> bg.integer_validator("width", 0.0000001)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+>>> bg.integer_validator("width", None)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
