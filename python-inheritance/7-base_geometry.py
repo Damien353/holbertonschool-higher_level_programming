@@ -40,7 +40,7 @@ class BaseGeometry:
         superieur a 0, en levant les exceptions appropriees en cas d'echec
         de la validation.
         """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
