@@ -15,3 +15,17 @@ ValueError: width must be greater than 0
 Traceback (most recent call last):
     ...
 TypeError: width must be an integer
+
+>>> bg.integer_validator("width", 0)
+Traceback (most recent call last):
+    ...
+ValueError: width must be greater than 0
+
+# Test avec des arguments différents ("height" pour tester la flexibilité des noms)
+>>> bg.integer_validator("height", 10)
+
+# Test d'exception si une valeur est trop grande, par exemple pour un grand nombre
+>>> bg.integer_validator("width", 1000000)
+
+# Vérification d'un nom d'argument inattendu (nom de variable)
+>>> bg.integer_validator("side_length", 3)
