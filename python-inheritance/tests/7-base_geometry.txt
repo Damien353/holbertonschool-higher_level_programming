@@ -21,38 +21,30 @@ Traceback (most recent call last):
     ...
 ValueError: width must be greater than 0
 
-# Test avec des arguments différents ("height" pour tester la flexibilité des noms)
 >>> bg.integer_validator("height", 10)
 
-# Test d'exception si une valeur est trop grande, par exemple pour un grand nombre
 >>> bg.integer_validator("width", 1000000)
 
-# Vérification d'un nom d'argument inattendu (nom de variable)
 >>> bg.integer_validator("side_length", 3)
 
-# Test de type non chaîne pour 'name' (bien que ce ne soit pas mentionné dans ta fonction, c'est une vérification utile)
 >>> bg.integer_validator(123, 5)
 Traceback (most recent call last):
     ...
 TypeError: 123 must be an integer
 
-# Test de nombre flottant pour value (devrait lever TypeError)
 >>> bg.integer_validator("width", 5.5)
 Traceback (most recent call last):
     ...
 TypeError: width must be an integer
 
-# Test avec une chaîne de caractères vide pour 'name' (vérifie si le nom est correctement traité)
 >>> bg.integer_validator("", 10)
 Traceback (most recent call last):
     ...
 TypeError:  must be an integer
 
-# Test avec une valeur très petite (par exemple un très petit nombre) qui devrait échouer
 >>> bg.integer_validator("width", -0.0000001)
 Traceback (most recent call last):
     ...
 ValueError: width must be greater than 0
 
-# Test avec des valeurs extrêmes (très grandes ou très petites)
 >>> bg.integer_validator("width", 999999999999999)
