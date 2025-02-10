@@ -19,4 +19,4 @@ def read_file(filename=""):
     du fichier est ensuite affiche dans la sortie standard (stdout).
     """
     with open(filename, encoding="utf-8") as f:
-        print(f.read())
+        print(f.read(), end="")
