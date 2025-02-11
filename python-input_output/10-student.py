@@ -2,7 +2,8 @@
 """
 Classe Student qui definit un etudiant avec un nom, un prenom et un age.
 La methode to_json retourne une representation en dictionnaire de l'instance.
-Si un parametre attrs est passe, seuls les attributs de cette liste sont inclus.
+Si un parametre attrs est passe, seuls les attributs de cette
+liste sont inclus.
 """
 
 
@@ -30,10 +31,12 @@ class Student:
     def to_json(self, attrs=None):
         """
         Retourne une representation en dictionnaire de l'objet Student.
-        Si un parametre attrs est passe, seuls les attributs de cette liste sont inclus.
+        Si un parametre attrs est passe, seuls les attributs de cette
+        liste sont inclus.
 
         Args:
-            attrs (list, optional): Liste d'attributs a inclure dans le dictionnaire.
+            attrs (list, optional): Liste d'attributs a inclure dans
+            le dictionnaire.
 
         Returns:
             dict: Le dictionnaire avec les attributs de l'etudiant.

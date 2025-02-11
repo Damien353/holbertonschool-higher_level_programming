@@ -6,8 +6,8 @@ Module pour generer le triangle de Pascal jusqu'a n lignes.
 
 def pascal_triangle(n):
     """
-    Retourne une liste de listes representant le triangle de Pascal de n lignes.
-
+    Retourne une liste de listes representant le triangle de Pascal
+    de n lignes.
     Si n <= 0, retourne une liste vide.
 
     Args:

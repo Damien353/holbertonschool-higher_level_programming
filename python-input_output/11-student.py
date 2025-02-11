@@ -2,8 +2,9 @@
 """
 Classe Student qui definit un etudiant avec un nom, un prenom et un age.
 La methode to_json retourne une representation en dictionnaire de l'instance.
-Si un parametre attrs est passe, seuls les attributs de cette liste sont inclus.
-La methode reload_from_json permet de recharger un objet avec des valeurs issues d'un dictionnaire.
+Si un parametre attrs est passe, seuls les attributs de cette liste
+sont inclus. La methode reload_from_json permet de recharger un objet
+avec des valeurs issues d'un dictionnaire.
 """
 
 
@@ -31,10 +32,12 @@ class Student:
     def to_json(self, attrs=None):
         """
         Retourne une representation en dictionnaire de l'objet Student.
-        Si un parametre attrs est passe, seuls les attributs de cette liste sont inclus.
+        Si un parametre attrs est passe, seuls les attributs de cette
+        liste sont inclus.
         
         Args:
-            attrs (list, optional): Liste d'attributs a inclure dans le dictionnaire.
+            attrs (list, optional): Liste d'attributs a inclure dans
+            le dictionnaire.
 
         Returns:
             dict: Le dictionnaire avec les attributs de l'etudiant.
@@ -46,10 +49,12 @@ class Student:
 
     def reload_from_json(self, json):
         """
-        Recharge les attributs de l'objet Student a partir d'un dictionnaire json.
+        Recharge les attributs de l'objet Student a partir d'un
+        dictionnaire json.
 
         Args:
-            json (dict): Un dictionnaire avec les nouvelles valeurs pour les attributs.
+            json (dict): Un dictionnaire avec les nouvelles valeurs pour
+            les attributs.
         """
         for key, value in json.items():
             setattr(self, key, value)
