@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-Script pour ajouter tous les arguments a une liste Python et les sauvegarder dans un fichier.
-
+Script pour ajouter tous les arguments a une liste Python et les sauvegarder
+dans un fichier.
 Ce script utilise les fonctions 'save_to_json_file' et 'load_from_json_file'
-pour gerer la liste des arguments. La liste est sauvegardee dans un fichier JSON
-nomme 'add_item.json'. Si le fichier n'existe pas, il est cree.
+pour gerer la liste des arguments. La liste est sauvegardee dans un fichier
+JSON nomme 'add_item.json'. Si le fichier n'existe pas, il est cree.
 """
 
 import json
