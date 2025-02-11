@@ -22,5 +22,5 @@ def load_from_json_file(filename):
     Cette fonction utilise la fonction json.load() pour lire un fichier JSON
     et convertir son contenu en un objet Python.
     """
-    with open(filename, "r", encoding="utf-8") as f:
+    with open(filename, "r") as f:
         return json.load(f)
