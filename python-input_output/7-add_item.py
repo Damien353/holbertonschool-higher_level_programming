@@ -9,8 +9,8 @@ nomme 'add_item.json'. Si le fichier n'existe pas, il est cree.
 
 import sys
 import json
-from 5-save_to_json_file import save_to_json_file
-from 6-load_from_json_file import load_from_json_file
+save_to_json_file = __import__('5-save_from_json_file')
+load_from_json_file = __import__('6-load_from_json_file')
 
 
 def add_items():
@@ -29,6 +29,3 @@ def add_items():
 
     items.extend(sys.argv[1:])
     save_to_json_file(items, "add_item.json")
-
-if __name__ == "__main__":
-    add_items()
