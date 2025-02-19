@@ -29,7 +29,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         # Si la requête est pour la racine, retourner un message de bienvenue
         elif self.path == '/':
             self.send_response(200)
-            self.send_header('Content-type', 'text/html')
+            self.send_header('Content-type', 'text/plain')
             self.end_headers()
             self.wfile.write(b'Hello, this is a simple API!')
 
