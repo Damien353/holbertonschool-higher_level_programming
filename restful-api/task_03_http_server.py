@@ -33,6 +33,15 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'Hello, this is a simple API!')
 
+        # Si la requête est pour /info, retourner les informations sur l'API
+        elif self.path == '/info':
+            info_data = {"version": "1.0", "description": "A simple API built with http.server"}
+            json_info_data = json.dumps(info_data)
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(json_info_data.encode('utf-8'))
+
         # Si l'endpoint n'est pas reconnu, renvoyer une erreur 404
         else:
             self.send_error(404, "Endpoint not found")
