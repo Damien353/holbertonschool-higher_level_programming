@@ -46,10 +46,10 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         else:
             self.send_error(404, "Endpoint not found")
 
-# Démarrer le serveur HTTP
-def run():
-    server_address = ('', 8000)  # Serveur sur le port 8000
-    httpd = http.server.HTTPServer(server_address, MyHandler)
+# Démarrer le serveur HTTP avec la version flexible
+def run(server_class=http.server.HTTPServer, handler_class=MyHandler):
+    server_address = ('', 8000)
+    httpd = server_class(server_address, handler_class)
     print("Server running on http://localhost:8000...")
     httpd.serve_forever()
 
