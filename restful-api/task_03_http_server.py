@@ -14,7 +14,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             data = {"name": "John", "age": 30, "city": "New York"}
             # Convertir en JSON
             json_data = json.dumps(data)
-            
+
             # Envoi de la réponse 200 (OK)
             self.send_response(200)
             self.send_header('Content-type', 'application/json')  # Type de contenu JSON
@@ -28,7 +28,7 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
             self.send_header('Content-type', 'text/html')  # Type de contenu texte
             self.end_headers()  # Fin des en-têtes
             self.wfile.write(b'OK')  # Réponse "OK"
-        
+
         # Si l'endpoint n'est pas reconnu, renvoyer une erreur 404
         else:
             self.send_error(404, "Endpoint not found")  # Code d'erreur 404
