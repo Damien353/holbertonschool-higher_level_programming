@@ -2,11 +2,11 @@
 """
 """
 
-import http.server
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 # Définition de la classe qui gère les requêtes HTTP
-class MyHandler(http.server.BaseHTTPRequestHandler):
+class MyHandler(BaseHTTPRequestHandler):
     
     # Cette méthode est appelée pour chaque requête GET
     def do_GET(self):
