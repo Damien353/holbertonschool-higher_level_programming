@@ -42,9 +42,12 @@ class MyHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json_info_data.encode('utf-8'))
 
-        # Si l'endpoint n'est pas reconnu, renvoyer une erreur 404
+        # Cas de tous les autres chemins non définis, envoi d'un 404 Not Found
         else:
-            self.send_error(404, "Endpoint not found")
+            self.send_response(404)  # Réponse 404 pour un chemin non trouvé
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
+            self.wfile.write(b"Endpoint not found")  # Message simplifié pour l'erreur 404
 
 # Démarrer le serveur HTTP avec la version flexible
 def run(server_class=HTTPServer, handler_class=MyHandler):
