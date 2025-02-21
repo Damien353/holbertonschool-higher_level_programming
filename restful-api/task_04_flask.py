@@ -5,10 +5,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Dictionnaire des utilisateurs en mémoire
-users = {
-    "jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
-    "john": {"name": "John", "age": 30, "city": "New York"}
-}
+users = {}
 
 # Route racine
 @app.route("/")
