@@ -4,57 +4,44 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Dictionnaire des utilisateurs en mémoire
+# Dictionnaire vide d'utilisateurs
 users = {}
 
-# Route racine
-@app.route("/")
+@app.route('/')
 def home():
     return "Welcome to the Flask API!"
 
-# Route /data : Retourne la liste des utilisateurs
-@app.route("/data")
-def data():
-    return jsonify(list(users.keys()))
+@app.route('/data')
+def json_response():
+    user = list(users.keys())
+    return jsonify(user)
 
-# Route /status : Retourne OK
-@app.route("/status")
+@app.route('/status')
 def status():
     return "OK"
 
-# Route dynamique /users/<username> : Retourne un utilisateur spécifique
-@app.route("/users/<username>")
-def get_user(username):
-    user = users.get(username)
-    if user:
-        user["username"] = username
-        return jsonify(user)
-    else:
+@app.route('/users/<username>')
+def user_data(username):
+    if username not in users:
         return jsonify({"error": "User not found"}), 404
+    return jsonify(users[username])
 
-# Route /add_user : Accepte une requête POST pour ajouter un utilisateur
-@app.route("/add_user", methods=["POST"])
+@app.route('/add_user', methods=['POST'])
 def add_user():
-    data = request.get_json()
-
-    # Vérifier si l'username est présent dans les données
-    if "username" not in data:
+    new_user = request.get_json()
+    if 'username' not in new_user:
         return jsonify({"error": "Username is required"}), 400
-
-    # Ajouter l'utilisateur dans le dictionnaire
-    users[data["username"]] = {
-        "name": data["name"],
-        "age": data["age"],
-        "city": data["city"]
+    username = new_user['username']
+    users[username] = {
+        "username": new_user.get('username'),
+        "name": new_user.get('name'),
+        "age": new_user.get('age'),
+        "city": new_user.get('city')
     }
-
-    # Retourner la confirmation avec les détails de l'utilisateur ajouté
     return jsonify({
         "message": "User added",
-        "user": users[data["username"]]
+        "user": users[username]
     }), 201
-
-# Lancer l'application si ce fichier est exécuté directement
 
 if __name__ == "__main__":
     app.run()
